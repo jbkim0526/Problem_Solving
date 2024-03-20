@@ -1,5 +1,3 @@
-# 백준 1197번
-
 from collections import defaultdict
 from heapq import heappop, heappush
 v, e = map(int,input().split())
@@ -19,9 +17,7 @@ heap = [(0,1,1)]
 
 while heap:
     w, pre_node, cur_node = heappop(heap)
-    if cur_node in visited:
-        continue
-
+    print(cur_node, w, visited)
     mst.append((pre_node,cur_node))
     ans += w 
     visited.add(cur_node)
@@ -29,10 +25,7 @@ while heap:
     for next_node, next_w in adjacents[cur_node]:
         if next_node in visited:
             continue
+        print(next_w,cur_node, next_node)
         heappush(heap,(next_w,cur_node,next_node))
 
 print(ans)
-
-
-
-
