@@ -65,6 +65,7 @@ class LLRB_Tree:
         if self.isRed(x.left) and self.isRed(x.right):
             self.flipColor(x)
 
+        return x
         
 
         

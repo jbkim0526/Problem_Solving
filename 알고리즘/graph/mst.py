@@ -12,9 +12,12 @@ for _ in range(e):
     adjacents[b].add((a,w))
 
 
+keys = [float('inf')]*(v+1)
+
 visited = set()
 mst = []
 ans = 0
+keys[1] = 0
 heap = [(0,1,1)]
 
 while heap:
@@ -27,12 +30,13 @@ while heap:
     visited.add(cur_node)
 
     for next_node, next_w in adjacents[cur_node]:
-        if next_node in visited:
+        if next_node in visited or next_w >= keys[next_node]:
             continue
+        keys[next_node] = next_w
         heappush(heap,(next_w,cur_node,next_node))
 
 print(ans)
 
-
+print(mst)
 
 

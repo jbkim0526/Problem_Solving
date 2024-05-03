@@ -58,7 +58,7 @@ class BinarySearchTree:
             else:
                 t = x 
                 x.val = self._min(x,right)
-                x.right = deleteMin(t.right)
+                x.right = self._deleteMin(t.right)
                 x.left = t.left
 
         x.n = self.size(x.left) + self.size(x.right) + 1

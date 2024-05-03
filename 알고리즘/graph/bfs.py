@@ -2,6 +2,7 @@ from collections import deque
 n =100
 si,sj= 0,0
 visited = [[False for i in range(n)] for j in range(n)]
+directions = [(1,0),(0,1),(-1,0),(0,-1)]
 
 q = deque([(si,sj)])
 visited[si][sj] = True
